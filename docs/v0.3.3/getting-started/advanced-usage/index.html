@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" as="font" href="https://kubi.zone/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="https://kubi.zone/fonts/vendor/jost/jost-v4-latin-700.woff2"  type="font/woff2" crossorigin>
+
+
+<link rel="stylesheet" href="https://kubi.zone/main.css">
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+  
+  
+  
+    
+  
+  
+  
+  
+    
+  
+  
+  
+
+
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+	
+
+
+	
+
+<title>Advanced Use Cases | kubizone</title>
+<meta name="description" content="Covers some more advanced use cases for Kubizone">
+<link rel="canonical" href="https://kubi.zone/docs/v0.3.3/getting-started/advanced-usage/">
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://kubi.zone/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Docs",
+            "item": "https://kubi.zone/docs/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "V0.3.3",
+            "item": "https://kubi.zone/docs/v0.3.3/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  4 ,
+            "name": "Getting Started",
+            "item": "https://kubi.zone/docs/v0.3.3/getting-started/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  5 ,
+            "name": "Advanced Usage",
+            "item": "https://kubi.zone/docs/v0.3.3/getting-started/advanced-usage/"
+          },
+        
+      
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="theme-color" content="#fff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://kubi.zone/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://kubi.zone/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://kubi.zone/favicon-16x16.png">
+  
+    <link rel="manifest" href="https://kubi.zone/site.webmanifest" crossorigin>
+  
+
+
+  
+
+</head>
+
+  
+
+<body class="docs single">
+  
+  
+  
+  
+  
+<div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+	<div class="container">
+		<input class="menu-btn order-0" type="checkbox" id="menu-btn">
+		<label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
+		<a class="navbar-brand order-1 order-md-0 me-auto" href="https://kubi.zone">
+			<img src="https://kubi.zone/icon.svg" width="28px" height="28px" />
+			kubizone
+		</a>
+		<button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
+			<span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+			<span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+		</button>
+		<ul class="navbar-nav fork-me order-3 order-md-5">
+			
+				
+					<li class="nav-item">
+						<a class="nav-link" href="https://github.com/kubi-zone/kubizone"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a>
+					</li>
+				
+			
+		</ul>
+		<div class="collapse navbar-collapse order-4 order-md-1">
+			<ul class="navbar-nav main-nav me-auto order-5 order-md-2">
+				
+					
+				
+				
+				
+					
+						<li class="nav-item">
+							<a class="nav-link" href="https://kubi.zone/docs/v0.3.3/getting-started/introduction/">Docs</a>
+						</li>
+					
+				
+			</ul>
+			<div class="break order-6 d-md-none"></div>
+			
+				<form class="navbar-form flex-grow-1 order-7 order-md-3">
+					<input id="userinput" class="form-control is-search" type="search" placeholder="Search docs..."
+						aria-label="Search docs..." autocomplete="off">
+					<div id="suggestions" class="shadow bg-white rounded"></div>
+				</form>
+			
+		</div>
+	</div>
+</header>
+
+
+
+  
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row flex-xl-nowrap">
+	  
+<div class="col-lg-5 col-xl-4 docs-sidebar">
+	<nav class="docs-links" aria-label="Main navigation">
+			
+			
+			
+			<a href="/docs"><h1>v0.3.3</h1></a>
+			
+			
+			
+					
+					
+					
+							<h3>Getting Started</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/getting-started/introduction/">Introduction</a></li>
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/getting-started/installation/">Installation</a></li>
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/getting-started/usage/">Usage</a></li>
+							                           
+									<li><a class="docs-link active" href="https://kubi.zone/docs/v0.3.3/getting-started/advanced-usage/">Advanced Use Cases</a></li>
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/getting-started/integrating/">Integrating</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>Integrations</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/integrations/route53/">Route53 (example)</a></li>
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/integrations/zonefile/">Zonefile</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>Custom Resources</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/custom-resources/record/">Record</a></li>
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/custom-resources/zone/">Zone</a></li>
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/custom-resources/zonefile/">ZoneFile</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>Operators</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/operators/kubizone/">Kubizone Operator</a></li>
+							                           
+									<li><a class="docs-link" href="https://kubi.zone/docs/v0.3.3/operators/zonefile/">Zonefile Operator</a></li>
+							
+					</ul>
+					
+					
+			
+	</nav>
+</div>
+
+	  
+  
+  <nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+  	<div class="page-links">
+  			<h3>On this page</h3>
+  			<nav id="TableOfContents">
+  					<ul>
+  							
+  							<li><a href="https://kubi.zone/docs/v0.3.3/getting-started/advanced-usage/#using-zoneref-to-decouple-records-and-zones-from-a-domains">Using zoneRef to decouple Records and Zones from a domains.</a></li>
+  							
+  							
+  							<li><a href="https://kubi.zone/docs/v0.3.3/getting-started/advanced-usage/#delegating-across-namespaces">Delegating across namespaces</a></li>
+  							
+  							
+  					</ul>
+  			</nav>
+  	</div>
+  </nav>
+  
+
+      <main class="docs-content col-lg-11 col-xl-9">
+        <h1>Advanced Use Cases</h1>
+        <p class="lead">More advanced use cases for Kubizone.</p>
+        <h1 id="using-zoneref-to-decouple-records-and-zones-from-a-domains">Using zoneRef to decouple Records and Zones from a domains.</h1>
+<p>Using partial domain names and zone References (<code>zoneRef</code>) it is possible to define a
+<a href="../custom-resources/record.md"><code>Record</code></a> or even an entire <a href="../custom-resources/zone.md"><code>Zone</code></a>
+without knowing what the parent Zone's domain is ahead of time.</p>
+<p>The fully qualified domain name of the record or zone will be automatically deduced,
+and if you at some point in the future want to change the parent Zone's domain
+name, you won't have to modify the <code>domainName</code> of all your child records or zones along
+with it.</p>
+<p>As an example, consider the following Zone:</p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#bf616a;">apiVersion</span><span>: </span><span style="color:#a3be8c;">kubi.zone/v1alpha1
+</span><span style="color:#bf616a;">kind</span><span>: </span><span style="color:#a3be8c;">Zone
+</span><span style="color:#bf616a;">metadata</span><span>:
+</span><span>  </span><span style="color:#bf616a;">name</span><span>: </span><span style="color:#a3be8c;">my-zone
+</span><span style="color:#bf616a;">spec</span><span>:
+</span><span>  </span><span style="color:#bf616a;">domainName</span><span>: </span><span style="color:#a3be8c;">example.org.
+</span><span>  </span><span style="color:#bf616a;">delegations</span><span>:
+</span><span>  - </span><span style="color:#bf616a;">records</span><span>:
+</span><span>    - </span><span style="color:#bf616a;">pattern</span><span>: &quot;</span><span style="color:#a3be8c;">*</span><span>&quot;
+</span></code></pre>
+<p>And this child record:</p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#bf616a;">apiVersion</span><span>: </span><span style="color:#a3be8c;">kubi.zone/v1alpha1
+</span><span style="color:#bf616a;">kind</span><span>: </span><span style="color:#a3be8c;">Record
+</span><span style="color:#bf616a;">metadata</span><span>:
+</span><span>  </span><span style="color:#bf616a;">name</span><span>: </span><span style="color:#a3be8c;">www-record
+</span><span style="color:#bf616a;">spec</span><span>:
+</span><span>  </span><span style="color:#bf616a;">domainName</span><span>: </span><span style="color:#a3be8c;">www
+</span><span>  </span><span style="color:#bf616a;">zoneRef</span><span>:
+</span><span>    </span><span style="color:#bf616a;">name</span><span>: </span><span style="color:#a3be8c;">my-zone
+</span><span>  </span><span style="color:#bf616a;">type</span><span>: </span><span style="color:#a3be8c;">A
+</span><span>  </span><span style="color:#bf616a;">rdata</span><span>: &quot;</span><span style="color:#a3be8c;">192.168.0.2</span><span>&quot;
+</span></code></pre>
+<p>With this setup <code>www.example.org.</code> will resolve to <code>192.168.0.2</code> as expected.</p>
+<p>If we now edit our <code>my-zone</code> and change the top-level domain to <code>.com</code>, like so:</p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#bf616a;">spec</span><span>:
+</span><span>  </span><span style="color:#bf616a;">domainName</span><span>: </span><span style="color:#a3be8c;">example.com.
+</span></code></pre>
+<p>Then the change will be automatically reflected in our record, and <code>www.example.com</code>
+will now resolve correctly instead.</p>
+<p>If we had instead defined our Record in terms of the expected fully qualified
+domain name of <code>www.example.org.</code>, then the Record would simply be orphaned during
+the change, since the parent domain would no longer match.</p>
+<p>This method might also be useful in some cases where a lot of records have to be
+shared between Zones, and can therefore just be duplicated, and have their <code>zoneRef</code>
+changed, or in cases where the Zones are in separate namespaces, simply copied.</p>
+<h1 id="delegating-across-namespaces">Delegating across namespaces</h1>
+<p>Kubizone allows you to delegate responsibilities for subdomains across namespace
+boundaries. This means that domain control can be managed with high granularity,
+by narrowly scoping the types and domains which a Zone should adopt.</p>
+<p>For example, this zone delegates responsibility for all all <code>*.dev.example.org</code>
+records to the <code>development</code> namespace, and similarly allows adoption of DNS
+records matching <code>*.prod.example.org</code> from the <code>production</code> namespace.</p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span>---
+</span><span style="color:#bf616a;">apiVersion</span><span>: </span><span style="color:#a3be8c;">kubi.zone/v1alpha1
+</span><span style="color:#bf616a;">kind</span><span>: </span><span style="color:#a3be8c;">Zone
+</span><span style="color:#bf616a;">metadata</span><span>:
+</span><span>  </span><span style="color:#bf616a;">name</span><span>: </span><span style="color:#a3be8c;">example-org
+</span><span style="color:#bf616a;">spec</span><span>:
+</span><span>  </span><span style="color:#bf616a;">domainName</span><span>: </span><span style="color:#a3be8c;">example.org.
+</span><span>  </span><span style="color:#bf616a;">delegations</span><span>:
+</span><span>    - </span><span style="color:#bf616a;">namespaces</span><span>: [&quot;</span><span style="color:#a3be8c;">development</span><span>&quot;]
+</span><span>      </span><span style="color:#bf616a;">records</span><span>:
+</span><span>      - </span><span style="color:#bf616a;">pattern</span><span>: &quot;</span><span style="color:#a3be8c;">*.dev</span><span>&quot;
+</span><span>    - </span><span style="color:#bf616a;">namespaces</span><span>: [&quot;</span><span style="color:#a3be8c;">production</span><span>&quot;]
+</span><span>      </span><span style="color:#bf616a;">records</span><span>:
+</span><span>      - </span><span style="color:#bf616a;">pattern</span><span>: &quot;</span><span style="color:#a3be8c;">*.prod</span><span>&quot;
+</span></code></pre>
+<p>These rules ensure that under no circumstances will any Records matching <code>*.prod.example.org</code>
+deployed into the <code>development</code> namespace be allowed to appear within this parent
+zone's entries, and vice versa.</p>
+<p>This record <em>will</em> be adopted by the Zone:</p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span>---
+</span><span style="color:#bf616a;">apiVersion</span><span>: </span><span style="color:#a3be8c;">kubi.zone/v1alpha1
+</span><span style="color:#bf616a;">kind</span><span>: </span><span style="color:#a3be8c;">Record
+</span><span style="color:#bf616a;">metadata</span><span>:
+</span><span>  </span><span style="color:#bf616a;">name</span><span>: </span><span style="color:#a3be8c;">www-dev-example-org
+</span><span>  </span><span style="color:#bf616a;">namespace</span><span>: </span><span style="color:#a3be8c;">development
+</span><span style="color:#bf616a;">spec</span><span>:
+</span><span>  </span><span style="color:#bf616a;">domainName</span><span>: </span><span style="color:#a3be8c;">www.dev.example.org.
+</span><span>  </span><span style="color:#bf616a;">type</span><span>: </span><span style="color:#a3be8c;">A
+</span><span>  </span><span style="color:#bf616a;">rdata</span><span>: &quot;</span><span style="color:#a3be8c;">192.168.0.2</span><span>&quot;
+</span></code></pre>
+<p>Whereas this record won't be adopted by the zone, because it's a .prod record in the
+development namespace, which violates the delegation rules configured for the www-example zone.</p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span>---
+</span><span style="color:#bf616a;">apiVersion</span><span>: </span><span style="color:#a3be8c;">kubi.zone/v1alpha1
+</span><span style="color:#bf616a;">kind</span><span>: </span><span style="color:#a3be8c;">Record
+</span><span style="color:#bf616a;">metadata</span><span>:
+</span><span>  </span><span style="color:#bf616a;">name</span><span>: </span><span style="color:#a3be8c;">www-prod-example-org
+</span><span>  </span><span style="color:#bf616a;">namespace</span><span>: </span><span style="color:#a3be8c;">development
+</span><span style="color:#bf616a;">spec</span><span>:
+</span><span>  </span><span style="color:#bf616a;">domainName</span><span>: </span><span style="color:#a3be8c;">www.prod.example.org.
+</span><span>  </span><span style="color:#bf616a;">type</span><span>: </span><span style="color:#a3be8c;">A
+</span><span>  </span><span style="color:#bf616a;">rdata</span><span>: &quot;</span><span style="color:#a3be8c;">192.168.0.2</span><span>&quot;
+</span></code></pre>
+<p>These delegation rules can be much more specific than that, allowing only certain record
+types to be adopted from specific namespaces. You might for instance have a namespace which
+hosts all the incoming mailing infrastructure which is managed by an entirely separate team.
+To allow them maximum freedom in doing their work, you can delegate the entire <code>MX</code> record
+type, as well as all <code>A</code> and <code>AAAA</code> records for the <code>mail.example.org.</code> domain to their namespace:</p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span>---
+</span><span style="color:#bf616a;">apiVersion</span><span>: </span><span style="color:#a3be8c;">kubi.zone/v1alpha1
+</span><span style="color:#bf616a;">kind</span><span>: </span><span style="color:#a3be8c;">Zone
+</span><span style="color:#bf616a;">metadata</span><span>:
+</span><span>  </span><span style="color:#bf616a;">name</span><span>: </span><span style="color:#a3be8c;">example-org
+</span><span style="color:#bf616a;">spec</span><span>:
+</span><span>  </span><span style="color:#bf616a;">domainName</span><span>: </span><span style="color:#a3be8c;">example.org.
+</span><span>  </span><span style="color:#bf616a;">delegations</span><span>:
+</span><span>    - </span><span style="color:#bf616a;">namespaces</span><span>: [&quot;</span><span style="color:#a3be8c;">mailing</span><span>&quot;]
+</span><span>      </span><span style="color:#bf616a;">records</span><span>:
+</span><span>      - </span><span style="color:#bf616a;">pattern</span><span>: &quot;</span><span style="color:#a3be8c;">*.mail</span><span>&quot;
+</span><span>        </span><span style="color:#bf616a;">types</span><span>: [&quot;</span><span style="color:#a3be8c;">A</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">AAAA</span><span>&quot;]
+</span><span>      - </span><span style="color:#bf616a;">pattern</span><span>: &quot;</span><span style="color:#a3be8c;">*</span><span>&quot;
+</span><span>        </span><span style="color:#bf616a;">types</span><span>: [&quot;</span><span style="color:#a3be8c;">MX</span><span>&quot;]
+</span></code></pre>
+
+        
+        
+<div class="docs-navigation d-flex justify-content-between">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+          
+          
+          <a class="ms-auto" href="https:&#x2F;&#x2F;kubi.zone&#x2F;docs&#x2F;v0.3.3&#x2F;integrations&#x2F;route53&#x2F;">
+            <div class="card my-1">
+              <div class="card-body py-2">
+                Route53 (example) &rarr;
+              </div>
+            </div>
+          </a>
+          
+          
+          
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+  
+</div>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+
+  
+    
+<footer class="footer text-muted">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 order-last order-lg-first">
+				<ul class="list-inline">
+					
+						<li class="list-inline-item">Powered by <a href="https://www.getzola.org/">Zola</a> and <a href="https://github.com/aaranxu/adidoks">AdiDoks</a></li>
+					
+				</ul>
+			</div>
+			<div class="col-lg-8 order-first order-lg-last text-lg-end">
+				<ul class="list-inline">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+  
+
+  
+<script type="text/javascript" src="https://kubi.zone/js/main.js" defer></script>
+
+  <script type="text/javascript" src="https://kubi.zone/plugins/elasticlunr.min.js" defer></script>
+  <script type="text/javascript" src="https://kubi.zone/search_index.en.js" defer></script>
+  <script type="text/javascript" src="https://kubi.zone/js/search.js" defer></script>
+
+  
+</body>
+</html>
