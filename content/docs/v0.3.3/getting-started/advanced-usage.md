@@ -73,3 +73,88 @@ This method might also be useful in some cases where a lot of records have to be
 shared between Zones, and can therefore just be duplicated, and have their `zoneRef`
 changed, or in cases where the Zones are in separate namespaces, simply copied.
 
+
+# Delegating across namespaces
+
+Kubizone allows you to delegate responsibilities for subdomains across namespace
+boundaries. This means that domain control can be managed with high granularity,
+by narrowly scoping the types and domains which a Zone should adopt.
+
+For example, this zone delegates responsibility for all all `*.dev.example.org`
+records to the `development` namespace, and similarly allows adoption of DNS
+records matching `*.prod.example.org` from the `production` namespace.
+
+```yaml
+---
+apiVersion: kubi.zone/v1alpha1
+kind: Zone
+metadata:
+  name: example-org
+spec:
+  domainName: example.org.
+  delegations:
+    - namespaces: ["development"]
+      records:
+      - pattern: "*.dev"
+    - namespaces: ["production"]
+      records:
+      - pattern: "*.prod"
+```
+
+These rules ensure that under no circumstances will any Records matching `*.prod.example.org`
+deployed into the `development` namespace be allowed to appear within this parent
+zone's entries, and vice versa.
+
+This record *will* be adopted by the Zone:
+
+```yaml
+---
+apiVersion: kubi.zone/v1alpha1
+kind: Record
+metadata:
+  name: www-dev-example-org
+  namespace: development
+spec:
+  domainName: www.dev.example.org.
+  type: A
+  rdata: "192.168.0.2"
+```
+
+Whereas this record won't be adopted by the zone, because it's a .prod record in the
+development namespace, which violates the delegation rules configured for the www-example zone.
+
+```yaml
+---
+apiVersion: kubi.zone/v1alpha1
+kind: Record
+metadata:
+  name: www-prod-example-org
+  namespace: development
+spec:
+  domainName: www.prod.example.org.
+  type: A
+  rdata: "192.168.0.2"
+```
+
+These delegation rules can be much more specific than that, allowing only certain record
+types to be adopted from specific namespaces. You might for instance have a namespace which
+hosts all the incoming mailing infrastructure which is managed by an entirely separate team.
+To allow them maximum freedom in doing their work, you can delegate the entire `MX` record
+type, as well as all `A` and `AAAA` records for the `mail.example.org.` domain to their namespace:
+
+```yaml
+---
+apiVersion: kubi.zone/v1alpha1
+kind: Zone
+metadata:
+  name: example-org
+spec:
+  domainName: example.org.
+  delegations:
+    - namespaces: ["mailing"]
+      records:
+      - pattern: "*.mail"
+        types: ["A", "AAAA"]
+      - pattern: "*"
+        types: ["MX"]
+```
