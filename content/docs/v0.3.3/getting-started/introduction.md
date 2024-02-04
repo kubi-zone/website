@@ -25,7 +25,8 @@ Kubizone aims to be a more flexible and versatile replacement for projects such 
 [external-dns](https://github.com/kubernetes-sigs/external-dns).
 
 Instead of building integrations for 3rd party DNS service providers into Kubizone itself
-like `external-dns` does, Kubizone instead exposes a very simple interface in the form of
+like [external-dns](https://github.com/kubernetes-sigs/external-dns?tab=readme-ov-file#new-providers) does,
+Kubizone instead exposes a very simple interface in the form of
 [Records](../../custom-resources/record/) and [Zones](../../custom-resources/zone/),
 which custom integrations in turn can use to update external DNS provider state.
 
